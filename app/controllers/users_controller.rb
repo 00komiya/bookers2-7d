@@ -13,9 +13,6 @@ class UsersController < ApplicationController
     @book = Book.new
   end
 
-  def edit
-  end
-
   def update
     if @user.update(user_params)
       redirect_to user_path(@user), notice: "You have updated user successfully."
