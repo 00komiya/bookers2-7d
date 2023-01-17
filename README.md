@@ -22,4 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-![ER図_new_match drawio](https://user-images.githubusercontent.com/114364060/212935282-fb7d8cb0-1fb5-4b70-af87-5fed873ded14.png)
