@@ -7,6 +7,31 @@
     <%= f.label :opinion %>
     <%= f.text_area :body, class: 'form-control book_body' %>
   </div>
+
+  <% if book.id === nil %>
+  <div class="form-group" id="star">
+    <%= f.label :rate %>
+    <%= f.hidden_field :rate, id: :review_star, class:'form-control' %>
+
+  <div id="post_raty"></div>
+    <script>
+      // scriptファイルをどのidの部分に配置するかを指定
+      let elem = document.querySelector('#post_raty');
+      let opt = {
+          starOn: "<%= asset_path('star-on.png') %>",
+          starOff: "<%= asset_path('star-off.png') %>",
+          starHalf: "<%= asset_path('star-half.png') %>",
+          scoreName: 'book[rate]',
+       };
+      raty(elem,opt);
+    </script>
+
+  <% else %>
+    <%= render "static_rate", book: book %>
+  <% end %>
+  </div>
+
+
   <div class="form-group">
     <%= f.submit class: 'btn btn-success' %>
   </div>
