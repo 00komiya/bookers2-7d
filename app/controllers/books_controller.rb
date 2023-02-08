@@ -10,6 +10,10 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    if params[:latest]
+      @books = @books.latest
+    else
+    end
     @book = Book.new
   end
 
