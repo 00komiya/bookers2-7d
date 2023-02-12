@@ -4,6 +4,8 @@ class Book < ApplicationRecord
   validates :body,presence:true,length:{maximum:200}
   has_many :favorites,dependent: :destroy
   has_many :book_comments, dependent: :destroy
+  has_many :book_tags, dependent: :destroy
+  has_many :tags, through: :book_tags
 
   # scope :latest, -> {order(created_at: :desc)}
 
